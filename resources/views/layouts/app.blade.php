@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('theme/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
     <link href="{{ asset('theme/assets/css/core.min.css') }}" rel="stylesheet">
     <link href="{{ asset('theme/assets/css/thesaas.min.css') }}" rel="stylesheet">
@@ -45,7 +45,7 @@
 
         <div class="topbar-left">
           <button class="topbar-toggler">&#9776;</button>
-          <a class="topbar-brand" href="index.html">
+          <a class="topbar-brand" href="{{url('/')}}">
             <img class="logo-default" src="{{ asset('theme/assets/img/logo.png') }}" alt="logo">
             <img class="logo-inverse" src="{{ asset('theme/assets/img/logo-light.png') }}" alt="logo">
           </a>
@@ -55,7 +55,8 @@
         <div class="topbar-right">
           <ul class="topbar-nav nav">
             @if(Auth::check())
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{url('/')}}">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{route('series.index')}}">Add Series</a></li>
             <li class="nav-item"><a class="nav-link active" href="{{route('logout')}}">Logout</a></li>
 
 

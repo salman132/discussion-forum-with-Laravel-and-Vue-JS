@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,4 +29,10 @@ Route::get('logout',function (){
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware'=>'auth'],function (){
+
+    Route::resource('series','SeriesController');
+});
